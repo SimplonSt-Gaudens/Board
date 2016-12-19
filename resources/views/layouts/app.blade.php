@@ -21,8 +21,8 @@
             <a href="#" class="item">board</a>
             @if(!Auth::guest())
             <div class="right menu">
-                <a href="" class="item">item</a>
-                <a href="" class="item">item</a>
+                <a href="{{url('/promotion')}}" class="item">Promotion</a>
+                <a href="{{url('/meteos/list')}}" class="item">Meteos</a>
                 <a href="{{url('/logout')}}" class="item">logout</a>
             </div>
             @endif

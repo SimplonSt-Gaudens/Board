@@ -14,6 +14,11 @@ class User extends Authenticatable
      *
      * @var array
      */
+
+    public $table = "users";
+    
+    protected $guarded = ['id'];
+
     protected $fillable = [
         'name', 'email', 'password', 'avatar', 'github_id'
     ];
@@ -29,6 +34,11 @@ class User extends Authenticatable
 
     public function meteos()
     {
-        return $this->belongsToMany(\App\User::class);
+        return $this->belongsToMany(\App\Meteo::class);
+    }
+
+    public function roles()
+    {
+        return $this->belongsToMany(\App\Role::class);
     }
 }

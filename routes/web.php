@@ -15,7 +15,7 @@ Route::get('/', function () {
     return redirect('/login');
 });
 
-// Auth::routes();
+Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
@@ -25,3 +25,7 @@ Route::get('/auth/github/callback', 'AuthController@handleProviderCallback');
 Route::get('/logout', 'AuthController@getLogout');
 
 Route::post('/meteo/post/{id}', 'MeteoController@postMeteo');
+Route::get('/meteos/list', 'MeteoController@getList');
+
+Route::get('/promotion', 'UserController@list');
+Route::get('/users/show/{id}', 'UserController@show');
