@@ -20,7 +20,7 @@ class User extends Authenticatable
     protected $guarded = ['id'];
 
     protected $fillable = [
-        'name', 'email', 'password', 'avatar', 'github_id'
+        'name', 'email', 'password', 'avatar', 'github_id', 'first_name', 'last_name'
     ];
 
     /**
@@ -40,5 +40,10 @@ class User extends Authenticatable
     public function roles()
     {
         return $this->belongsToMany(\App\Role::class);
+    }
+
+    public function idAdmin()
+    {
+        return Auth::user()->roles->contains('slug', 'form');
     }
 }

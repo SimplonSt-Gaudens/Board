@@ -1,11 +1,13 @@
 @extends('layouts.app')
 @section('content')
-<div class="ui six wide column">
+<div class="ui two wide column">
     <img class="ui small image" src="{{$user->avatar}}" alt="">
+    <div class="ui header">{{$user->first_name}} {{$user->last_name}}</div>
 </div>
 <div class="row">
-    <div class="ui six wide column">
-        <div class="ui segments">
+    <div class="ui twelve wide column">
+                    @if(Auth::user()->roles->contains('slug', 'form'))
+        <div class="ui vertical segments">
             <div class="ui segment">Météo</div>
             <div class="ui segment">
                 <form action="/meteo/post/{{$user->id}}" method="post" class="ui form">
@@ -32,5 +34,12 @@
             </div>
         </div>
     </div>
+        @endif
+        <div class="ui segment">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae, repudiandae, voluptatum. Eaque sed quia non deleniti labore incidunt doloremque, est iste enim quaerat culpa optio cupiditate perspiciatis possimus nemo placeat!
+        </div>
+        <div class="ui segment">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae, repudiandae, voluptatum. Eaque sed quia non deleniti labore incidunt doloremque, est iste enim quaerat culpa optio cupiditate perspiciatis possimus nemo placeat!
+        </div>
 </div>
 @endsection

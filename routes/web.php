@@ -28,4 +28,7 @@ Route::post('/meteo/post/{id}', 'MeteoController@postMeteo');
 Route::get('/meteos/list', 'MeteoController@getList');
 
 Route::get('/promotion', 'UserController@list');
+
 Route::get('/users/show/{id}', 'UserController@show');
+Route::get('/users/edit', 'UserController@getEdit');
+Route::post('/user/post/edit/{id}', 'UserController@postEdit');
