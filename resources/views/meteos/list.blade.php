@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
-<div class="ui twelve wide column">
-	<div class="ui cards">
+<div class="ui twelve wide column marged">
+	<div class="ui three cards">
 		@foreach($users as $user)
 		@for ($i = 0; $i < count($user->meteos); $i++)
 		<div class="card">

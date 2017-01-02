@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<div class="ui five wide column">
+<div class="ui five wide column marged">
 	<h3 class="ui dividing header">Edit Profil</h3>
 	<form class="ui form" action="/user/post/edit/{{$user->id}}" method="post">
 		{{csrf_field()}}

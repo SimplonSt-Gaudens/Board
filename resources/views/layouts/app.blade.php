@@ -18,12 +18,12 @@
     </head>
     <body>
         <div class="ui top attached menu">
-            <a href="#" class="item">board</a>
+            <a href="{{url("/")}}" class="item">board</a>
             @if(!Auth::guest())
             <div class="right menu">
                 <a href="{{url('/promotion')}}" class="item">Promotion</a>
                 <a href="{{url('/meteos/list')}}" class="item">Meteos</a>
-                <a href="{{url('/logout')}}" class="item">logout</a>
+                <a href="{{url('/logout')}}" class="item">Logout</a>
             </div>
             @endif
         </div>

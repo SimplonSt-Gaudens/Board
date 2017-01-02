@@ -46,7 +46,7 @@ class AuthController extends Controller
     	if($authUser = User::where('github_id', $githubUser->id)->first()){
     		return $authUser;
     	}
-
+        dd($authUser);
     	return User::create([
     			'name' => $githubUser->name,
     			'email' => $githubUser->email,
