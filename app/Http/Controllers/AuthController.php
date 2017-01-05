@@ -28,10 +28,8 @@ class AuthController extends Controller
     	}
 
     	$authUser = $this->findOrCreateUser($user);
-
     	Auth::login($authUser, true);
-
-    	return redirect('/home');
+        return redirect('/home');
     }
 
     public function getLogout()
@@ -41,17 +39,22 @@ class AuthController extends Controller
             return redirect('/login');
         }
     }
-    private function findOrCreateUser($githubUser)
+    public function findOrCreateUser($githubUser)
     {
     	if($authUser = User::where('github_id', $githubUser->id)->first()){
     		return $authUser;
     	}
-        dd($authUser);
+        $snake = snake_case($githubUser->nickname);
+        $arrName = explode('_', $snake);
     	return User::create([
     			'name' => $githubUser->name,
-    			'email' => $githubUser->email,
-    			'github_id' => $githubUser->id,
-    			'avatar' => $githubUser->avatar
+                'first_name' => title_case($arrName[0]),
+                'last_name' => title_case($arrName[1]),
+                'fullName' => $githubUser->nickname,
+                'email' => $githubUser->email,
+                'github_id' => $githubUser->id,
+                'avatar' => $githubUser->avatar,
+                'github_profile' => $githubUser->user['html_url']
     		]);
     }
 }

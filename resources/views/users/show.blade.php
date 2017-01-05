@@ -11,14 +11,23 @@
 </div>
 <div class="row">
     <div class="ui four wide column">
-        <div class="ui segment">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae, repudiandae, voluptatum. Eaque sed quia non deleniti labore incidunt doloremque, est iste enim quaerat culpa optio cupiditate perspiciatis possimus nemo placeat!
+        <div class="ui segments">
+            <div class="ui segment">
+                <a href="">Github</a>
+                <i class="github blue icon"></i>
+            </div>
+            <div class="ui clearing segment">
+                <a href="">Mail</a>
+                <i class="mail blue icon"></i>
+            </div>
+            <div class="ui segment">
+                <a href="">Website</a>
+                <i class="world blue icon"></i>
+            </div>
         </div>
     </div>
-    <div class="ui four wide column">
-        <div class="ui segment">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae, repudiandae, voluptatum. Eaque sed quia non deleniti labore incidunt doloremque, est iste enim quaerat culpa optio cupiditate perspiciatis possimus nemo placeat!
-        </div>
+    <div class="ui six wide column">
+        
     </div>
     @if(Auth::user()->roles->contains('slug', 'form'))
     <div class="ui six wide column">
@@ -51,7 +60,20 @@
                 {{-- expr --}}
             <div class="ui segment">
                 <div class="content">
-                    <h4 class="ui header">{{$user->meteos->last()->desc}}</h4>
+                    <h4 class="ui header">
+                        @if ($user->meteos->last()->meteo === 1)
+                            <i class="sun yellow icon"></i>
+                        @elseif($user->meteos->last()->meteo === 2)
+                            <i class="cloud blue icon"></i>
+                        @elseif($user->meteos->last()->meteo === 3)
+                            <i class="rain brown icon"></i>
+                        @elseif($user->meteos->last()->meteo === 4)
+                            <i class="lighting red icon"></i>
+                        @elseif($user->meteos->last()->meteo === 5)
+                            <i class="asterisk grey icon"></i>
+                        @endif
+                        {{$user->meteos->last()->desc}}
+                    </h4>
                     <span class="meta">{{$user->meteos->last()->created_at}}</span>
                 </div>
             </div>

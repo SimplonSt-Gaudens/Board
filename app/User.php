@@ -20,7 +20,7 @@ class User extends Authenticatable
     protected $guarded = ['id'];
 
     protected $fillable = [
-        'name', 'email', 'password', 'avatar', 'github_id', 'first_name', 'last_name'
+        'name', 'email', 'password', 'avatar', 'github_id', 'first_name', 'last_name', 'github_profile', 'fullName'
     ];
 
     /**

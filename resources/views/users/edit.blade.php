@@ -7,11 +7,23 @@
 		<div class="ui fields">
 			<div class="field">
 				<label for="">Nom</label>
-				<input type="text" name="last_name" value="{{$user->last_name}}">
+				<input type="text" name="last_name" value="{{$user->last_name}}" required/>
 			</div>
 			<div class="field">
 				<label for="">Prénom</label>
-				<input type="text" name="first_name" value="{{$user->first_name}}">
+				<input type="text" name="first_name" value="{{$user->first_name}}" required/>
+			</div>
+		</div>
+		<div class="ui field">
+			<div class="field">
+				<label for="">Profile Github</label>
+				<input type="text" name="github_profile" value="{{$user->github_profile}}" placeholder="https://github.com/JohnDoe" required/>
+			</div>
+		</div>
+		<div class="ui field">
+			<div class="field">
+				<label for="">Site Web</label>
+				<input type="text" name="website" value="{{$user->website}}"§>
 			</div>
 		</div>
 		<div class="ui field">

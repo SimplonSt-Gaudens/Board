@@ -38,7 +38,9 @@ class UserController extends Controller
 		$user->update([
 			"first_name" => $request->first_name,
 			"last_name" => $request->last_name,
-			"email" => $request->email
+			"email" => $request->email,
+			"github_profile" => $request->github_profile,
+			"website" => $request->website
 		]);
 		// dd($request->all());
 		$user->save();

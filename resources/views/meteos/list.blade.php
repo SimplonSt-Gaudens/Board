@@ -12,7 +12,7 @@
 					@if ($user->meteos[$i]->meteo === 1)
 						<i class="sun yellow icon"></i>
 					@elseif($user->meteos[$i]->meteo === 2)
-						<i class="cloud cyan icon"></i>
+						<i class="cloud blue icon"></i>
 					@elseif($user->meteos[$i]->meteo === 3)
 						<i class="rain brown icon"></i>
 					@elseif($user->meteos[$i]->meteo === 4)

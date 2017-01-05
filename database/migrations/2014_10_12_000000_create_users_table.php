@@ -18,6 +18,9 @@ class CreateUsersTable extends Migration
             $table->string('github_id')->unique();
             $table->string('first_name')->nullable();
             $table->string('last_name')->nullable();
+            $table->string('fullName')->nullable();
+            $table->string('website')->nullable();
+            $table->string('github_profile')->nullable();
             $table->string('name')->nullable();
             $table->string('email');
             $table->string('avatar');
